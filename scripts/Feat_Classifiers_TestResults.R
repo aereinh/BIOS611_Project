@@ -12,7 +12,6 @@ df30 <- df30_full %>%
 trainInds30 <- readRDS('models/trainInds30.rds')
 df_test30 <- df30[-trainInds30,]
 
-
 # Evaluate test performance of classifiers
 multinom_30 <- readRDS('models/multinom_30.rds')
 elnet_30 <- readRDS('models/elnet_30.rds')
@@ -51,7 +50,7 @@ test_plot <- metrics_all %>%
   ggplot(aes(x = Genre, y = Accuracy, fill = factor(model)))+
   geom_bar(stat = "identity", position = "dodge", alpha = .9)+
   #facet_wrap(vars(Metric))+
-  theme_bw()+
+  theme_bw(base_size=18)+
   labs(fill = "Model")+
   ggtitle('Test Set Accuracies for Derived Feature-Based Models')
 

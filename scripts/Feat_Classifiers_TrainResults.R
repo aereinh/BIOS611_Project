@@ -21,7 +21,7 @@ training_plot <- plot_grid(
   labels = "AUTO",  # Automatically label panels A, B, C, D
   ncol = 2
 ) + 
-  theme_bw()+
+  theme_bw(base_size=18)+
   theme(axis.line = element_blank(),
         axis.ticks = element_blank(),
         axis.text = element_blank())+
