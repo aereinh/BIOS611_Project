@@ -4,10 +4,12 @@ library(stats)
 library(ggdendro)
 library(RColorBrewer)
 library(MASS)
+library(ggplot2)
+library(DescTools)
 
 feat_df_full <- read.csv('data/features_30_sec.csv')
 feat_mat <- feat_df_full %>%
-  select(-c("filename","length","label"))%>% 
+  dplyr::select(-c("filename","length","label")) %>% 
   as.matrix()
 cor_mat <- cor(feat_mat)
 
