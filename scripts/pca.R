@@ -9,7 +9,7 @@ pca <- prcomp(feat_mat, center = T, scale. = T)
 
 # Add genre labels to PCA results
 pca_data <- as.data.frame(pca$x)  # Use first two PCs
-pca_data$Genre <- genre
+pca_data$Genre <- feat_df_full$label
 pca_data$filename <- feat_df_full$filename
 
 # Identify outliers
