@@ -38,8 +38,8 @@ For starters, the 10 different genres are listed in the output above, and they h
 A *spectrogram* represents a time-varying waveform in the as an evolving frequency spectrum over time. This is most often computed using a Short-Time Fourier transform (STFT) -- i.e. by taking the Fourier transform for sliding windows along the waveform. At a practical level, for our song data, the spectrogram allows us to see how different key aspects of the song -- e.g. melodies, harmonies, and rhythm -- play out throughout its run-time. The key distinguishing feature of the *Mel spectrogram* is it involves a nonlinear transformation of the STFT spectrogram to the Mel scale, which happens to align more closely to the scale in which humans perceive sound. This implies that is should be more useful for genre classification compared with the STFT, though I do not explore that too much here. Two examples of the Mel spectrogram for different genres (country and classical) are shown in Figure 1, where you can observe distinct patterns.
 
 ```{r, echo = FALSE, fig.show = "hold", fig.cap = "Mel Spectrograms for two samples", out.width = '50%'}
-knitr::include_graphics("figures/spect_country.png")
-knitr::include_graphics("figures/spect_classical.png")
+knitr::include_graphics("spects/spect_country.png")
+knitr::include_graphics("spects/spect_classical.png")
 ```
 
 With this in mind, I want to clarify the most common type of feature in our dataset, which come from the so-called *Mel-frequency Cepstral coefficients (MFCCs)*. MFCCs are used computed at each sliding window of the waveform (for 20 frequency bins), and then the average and variance is computed over all windows. The precise formula for these is a bit elusive (see below), but they can be thought of as quantifying the overall quality/timbre of the sound, unrelated to the pitch or loudness.
