@@ -76,7 +76,7 @@ select_genres <- genres[inds]
 for (i in 1:length(select_files)) {
   spect <- vis_mel_spect(select_files[i])+ggtitle(paste0('Mel Spectrogram (',select_genres[i],')'))+theme_classic(base_size = 18)
   ggsave(
-    filename = paste0("figures/spect_",select_genres[i],'.png'),  # File name
+    filename = paste0("spects/spect_",select_genres[i],'.png'),  # File name
     plot = spect,                   # The plot object to save
     width = 16,                             # Width of the plot in inches
     height = 10,                            # Height of the plot in inches
