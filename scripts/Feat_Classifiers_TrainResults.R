@@ -1,5 +1,8 @@
 library(cowplot)
 library(ggplot2)
+library(adabag)
+library(nnet)
+library(caret)
 
 # Evaluate performance of classifiers
 multinom_30 <- readRDS('models/multinom_30.rds')

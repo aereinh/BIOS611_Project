@@ -1,6 +1,9 @@
 library(dplyr)
 library(cowplot)
 library(ggplot2)
+library(adabag)
+library(nnet)
+library(caret)
 
 df30_full <- read.csv('data/features_30_sec.csv')
 df30 <- df30_full %>%
