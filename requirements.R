@@ -10,6 +10,7 @@ install.packages('caret')
 install.packages('glmnet')
 install.packages('nnet')
 install.packages('adabag')
+install.packages('glmnet')
 
 # For interactive app
 # install.packages("shiny")
