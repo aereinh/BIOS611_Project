@@ -1,4 +1,5 @@
 library(dplyr)
+library(ggplot2)
 feat_df_full <- read.csv('data/features_30_sec.csv')
 feat_mat <- feat_df_full %>%
   dplyr::select(-c("filename","length","label"))%>% 
