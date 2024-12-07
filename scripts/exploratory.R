@@ -3,9 +3,7 @@ library(pheatmap)
 library(DescTools)
 library(philentropy)
 
-
-# Examine spectrogram feature data
-feat_df_full <- read.csv('../Data/features_30_sec.csv')
+feat_df_full <- read.csv('data/features_30_sec.csv')
 feat_mat <- feat_df_full %>%
   select(-c("filename","length","label"))%>% 
   as.matrix()
@@ -50,7 +48,7 @@ results <- results[order(-results$EtaSq), ]
 ggplot(res, aes(x = reorder(Feature, -EtaSq), y = EtaSq)) +
   geom_bar(stat = "identity", fill = "skyblue") +
   coord_flip() +
-  labs(title = "Feature-Response Associations", x = "Feature", y = "Eta-Squared")
+  labs(title = "Feature-Genre Associations", x = "Feature", y = "Eta-Squared")
 
 ggplot(res, aes(x = reorder(Feature, PValue), y = -log10(PValue))) +
   geom_point(color = "red") +
@@ -85,9 +83,3 @@ ggplot(pca_data, aes(x = PC1, y = PC2, color = Genre)) +
   geom_point(size = 3) +
   labs(title = "PCA of Genres", x = "PC1", y = "PC2") +
   theme_minimal()
-
-
-# Compute Jensen-Shannon divergence matrix
-cor_mat <- cor(t(genre_means))
-cor_dissim_mat <- 1 - abs(cor_mat)
-pheatmap(cor_dissim_mat, main = "Genre Similarity (Correlation-Based Dissimilarity)")
