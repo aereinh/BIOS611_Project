@@ -53,6 +53,12 @@ ggsave(
 )
 
 # Hierarchical clustering
+feat_mat_sc <- scale(feat_mat)
+genre_means <- aggregate(feat_mat_sc, by = list(genre), FUN = mean)
+row.names(genre_means) <- genre_means$Group.1
+genre_means <- genre_means[,-1]
+dist_mat <- dist(genre_means, method = "euclidean")
+
 hc <- hclust(dist_mat, method = "ward.D2")
 dendro_data <- as.dendrogram(hc)
 dendro_df <- ggdendro::dendro_data(dendro_data)
