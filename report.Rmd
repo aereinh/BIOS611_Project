@@ -90,7 +90,7 @@ After tuning hyperparameters, I looked at how these models performed on the test
 In Figure 5, I show how these test accuracies vary across genre. We can see that Adaboost's improved accuracy comes in large part from being able to excel in places where all other models perform poorly (e.g. blues and rock prediction). Also, we see that for rock specifically, the relatively poor performance of the other models aligns with the exploratory PC plot above, where rock visually seemed hard to pick apart from the crowd. This discrepancies point to the fact that the decision boundaries between genres is nonlinear, which Adaboost is more capable of picking up on than the competitors. I did expect classical to be relatively easy to predict, but did not expect pop, which I thought of as an amalgamation of other genres, to see such good prediction. However, both of these genres again line up with the visual PC results.
 
 
-```{r, echo = FALSE, fig.cap = "Training performance under different hyperparameters", out.width = '100%'}
+```{r, echo = FALSE, fig.cap = "Test accuracies across genres", out.width = '100%'}
 knitr::include_graphics("figures/test_feat.png")
 ```
 
