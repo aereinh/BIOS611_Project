@@ -4,6 +4,7 @@ library(ggplot2)
 library(adabag)
 library(nnet)
 library(caret)
+library(glmnet)
 
 df30_full <- read.csv('data/features_30_sec.csv')
 df30 <- df30_full %>%

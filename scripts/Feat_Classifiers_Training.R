@@ -2,6 +2,7 @@ library(dplyr)
 library(nnet)
 library(caret)
 library(adabag)
+library(glmnet)
 
 set.seed(123)
 kfolds <- 10 # cross-validation for tuning
